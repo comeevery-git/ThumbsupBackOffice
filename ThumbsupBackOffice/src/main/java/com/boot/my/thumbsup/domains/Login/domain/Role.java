@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.Login;
+package com.boot.my.thumbsup.domains.Login.domain;
 
 public enum Role {
 

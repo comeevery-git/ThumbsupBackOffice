@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.Login;
+package com.boot.my.thumbsup.domains.Login.controller;
 
 
 import java.time.LocalDateTime;
@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.boot.my.thumbsup.Admin.Admin;
-import com.boot.my.thumbsup.Admin.AdminRepository;
-import com.boot.my.thumbsup.Admin.AdminService;
+import com.boot.my.thumbsup.domains.Admin.domain.Admin;
+import com.boot.my.thumbsup.domains.Admin.domain.AdminRepository;
+import com.boot.my.thumbsup.domains.Admin.service.AdminService;
 
 @Controller
 @RequestMapping("/login")

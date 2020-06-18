@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.Admin;
+package com.boot.my.thumbsup.domains.Admin.domain;
 
 import java.util.Optional;
 

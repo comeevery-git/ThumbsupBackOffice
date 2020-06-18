@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.Login;
+package com.boot.my.thumbsup.domains.Login.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,8 +12,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.boot.my.thumbsup.Admin.Admin;
-import com.boot.my.thumbsup.Admin.AdminRepository;
+import com.boot.my.thumbsup.domains.Admin.domain.Admin;
+import com.boot.my.thumbsup.domains.Admin.domain.AdminRepository;
+import com.boot.my.thumbsup.domains.Login.domain.Role;
 
 import lombok.RequiredArgsConstructor;
 

@@ -7,9 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.boot.my.thumbsup.Board.BoardEntity;
-import com.boot.my.thumbsup.Board.BoardRepository;
-import com.boot.my.thumbsup.Board.BoardService;
+import com.boot.my.thumbsup.domains.Board.domain.BoardEntity;
+import com.boot.my.thumbsup.domains.Board.domain.BoardRepository;
+import com.boot.my.thumbsup.domains.Board.service.BoardService;
 
 @Controller
 public class TestController {

@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.Board;
+package com.boot.my.thumbsup.domains.Board.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

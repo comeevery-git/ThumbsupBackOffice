@@ -1,6 +1,8 @@
-package com.boot.my.thumbsup.Admin;
+package com.boot.my.thumbsup.domains.Admin.service;
 
 import org.springframework.stereotype.Service;
+
+import com.boot.my.thumbsup.domains.Admin.domain.AdminRepository;
 
 import lombok.AllArgsConstructor;
 
