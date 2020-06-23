@@ -1,0 +1,48 @@
+/* This css file is to over write bootstarp css
+--------------------------------------------------------- /
+* Theme Name: Ela Admin Template
+* Theme URI: http://demos.jeweltheme.com/
+* Author: jewel_theme
+* Author URI: http://themeforest.net/user/jewel_theme/portfolio
+* Description:
+* Version: 1.0.0
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Tags: html, themplate, Ela Admin
+--------------------------------------------------------- */
+
+/* 템플릿 기본 css */
+#weatherWidget .currentDesc {
+     color: #ffffff!important;
+ }
+.traffic-chart {
+    min-height: 335px;
+}
+#flotPie1  {
+    height: 150px;
+}
+#flotPie1 td {
+    padding:3px;
+}
+#flotPie1 table {
+    top: 20px!important;
+    right: -10px!important;
+}
+.chart-container {
+    display: table;
+    min-width: 270px ;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#flotLine5  {
+     height: 105px;
+}
+
+#flotBarChart {
+    height: 150px;
+}
+#cellPaiChart{
+    height: 160px;
+}
+/* 템플릿 기본 css 끝 */

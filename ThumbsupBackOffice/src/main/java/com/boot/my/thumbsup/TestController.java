@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.boot.my.thumbsup.domains.Board.domain.BoardEntity;
 import com.boot.my.thumbsup.domains.Board.domain.BoardRepository;
@@ -26,7 +27,7 @@ public class TestController {
     /*
      * 관리자페이지 index
      */
-    @GetMapping("/index")
+    @RequestMapping("/index")
     public String index(
     		Model model) {
     	boardRepository.deleteAll();

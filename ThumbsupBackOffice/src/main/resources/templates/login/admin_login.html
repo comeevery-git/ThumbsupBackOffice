@@ -23,12 +23,8 @@
     <link rel="stylesheet" href="/resources/assets/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="/resources/assets/css/style.css">
     <link rel="stylesheet" href="/resources/assets/css/loginStyle.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     
-    <!-- 공통으로 뺄 것 !! -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <!-- JQury from Google CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Sweet Alert -->
@@ -42,6 +38,14 @@ function loginChk(){
 	
 }
 </script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+var msg = [[${msg}]];
+if(msg != null) alert(msg);
+
+/*]]>*/
+</script>
+
 <body class="bg-dark">
 
     <div class="sufee-login d-flex align-content-center flex-wrap">
