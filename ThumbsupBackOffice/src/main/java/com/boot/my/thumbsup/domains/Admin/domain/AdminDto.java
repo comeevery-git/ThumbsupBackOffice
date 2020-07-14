@@ -178,30 +178,12 @@ public class AdminDto {
 	public void setAdminToken(String adminToken) {
 		this.adminToken = adminToken;
 	}
-
-	public Admin toEntity() {
-		return new Admin(
-				admin_idx,
-				adminType,
-				adminDepart,
-				adminRank,
-				adminId,
-				adminPwd,
-				adminNm,
-				adminTel,
-				adminRrno,
-				adminGender,
-				adminImg,
-				adminUseyn,
-				adminDelyn,
-				adminRegdate,
-				adminUpddate,
-				adminGrant,
-				adminAccessdate,
-				adminToken
-				);
-	}
-
-    
+	/*
+	 * public Admin toEntity() { return new Admin( admin_idx, adminType,
+	 * adminDepart, adminRank, adminId, adminPwd, adminNm, adminTel, adminRrno,
+	 * adminGender, adminImg, adminUseyn, adminDelyn, adminRegdate, adminUpddate,
+	 * adminGrant, adminAccessdate, adminToken ); }
+	 * 
+	 */
     
 }

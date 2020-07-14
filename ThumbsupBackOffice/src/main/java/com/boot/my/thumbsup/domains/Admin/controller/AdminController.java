@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.boot.my.thumbsup.domains.Admin.domain.AdminRepository;
-import com.boot.my.thumbsup.domains.Admin.service.AdminService;
 import com.boot.my.thumbsup.domains.Board.domain.BoardEntity;
 import com.boot.my.thumbsup.domains.Board.domain.BoardRepository;
 import com.boot.my.thumbsup.domains.Board.service.BoardService;
@@ -18,10 +16,6 @@ public class AdminController {
  
 	@Autowired
 	PasswordEncoder passwordEncoder;
-	@Autowired
-	private AdminService adminService;
-	@Autowired
-	private AdminRepository adminRepository;
 	@Autowired
 	public BoardService boardService;
 	@Autowired
