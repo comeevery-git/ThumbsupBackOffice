@@ -12,54 +12,60 @@ import lombok.Setter;
 public class RSPAUTH001 implements RqsInterData{
 	// 결과값
 	private String success;
+	
+	// 관리자 idx
+	private int admin_idx;
+	
+	// 관리자 권한
+	private String adminRole;
+	
+    // 관리자유형 
+    private String adminType;
 
-	// jwt 토큰
-	private String data;
+    // 부서 
+    private String adminDepart;
 
-	/* idx
-	private Integer mbIdx;
+    // 직급 
+    private String adminRank;
 
     // 아이디 
-    private String mbId;
+    private String adminId;
 
     // 비밀번호 
-    private String mbPwd;
+    private String adminPwd;
 
     // 이름 
-    private String mbNm;
+    private String adminNm;
 
     // 전화번호 
-    private String mbTel;
+    private String adminTel;
 
     // 생년월일 
-    private String mbRrno;
+    private String adminRrno;
 
     // 성별 
-    private String mbGender;
+    private String adminGender;
 
     // 대표 이미지 
-    private Integer mbImg;
+    private Integer adminImg;
+
+    // 사용유무 
+    private String adminUseyn;
 
     // 탈퇴유무 
-    private String mbDelyn;
+    private String adminDelyn;
 
     // 등록일 
-    private String mbRegdate;
+    private String adminRegdate;
 
     // 수정일 
-    private String mbUpddate;
-   
-    // 마지막 접속일 
-    private String mbAccessdate;
+    private String adminUpddate;
 
-	 */
-    
-    
-    
-    
-    
-    
-    
+    // 마지막 접속일 
+    private String adminAccessdate;
+
+    // token
+    private String adminToken;
     
     
 }

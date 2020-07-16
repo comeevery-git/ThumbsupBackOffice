@@ -46,3 +46,16 @@
     height: 160px;
 }
 /* 템플릿 기본 css 끝 */
+
+/*
+ * 알림
+ */
+/* 알림영역 card body */
+div#adminNoticeWrap {
+    display: flex;
+}
+#adminNoticeBox {
+	margin-left: auto;
+}
+
+

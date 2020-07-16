@@ -1,6 +1,8 @@
 package com.boot.my.thumbsup.domains.login.controller;
 
 
+import java.util.Arrays;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -36,7 +38,7 @@ public class LoginController {
 	PasswordEncoder passwordEncoder;
 
 	/*
-	 * 직원 로그인, 직원가입
+	 * 직원 로그인/가입으로 이동
 	 */
     @GetMapping("/admin_login")
     public String admin_login(Model model) {
@@ -47,6 +49,9 @@ public class LoginController {
     	return "login/admin_register";
     }
     
+    /*
+     * 직원 로그인
+     */
     @PostMapping(value="/userLogin")
     @ResponseBody
     public ModelAndView UserLogin(
@@ -59,11 +64,9 @@ public class LoginController {
     			HttpServletRequest request,
     			@RequestBody String msg
     		) {
-    	System.out.println("member --- msg@@@@@@@@@@@@@@@@@ : "+msg);
-    	System.out.println("member --- adminId : "+adminId);
-    	System.out.println("member --- adminPwd : "+adminPwd);
+    	System.out.println("member --- msg ::: : "+msg);
     	System.out.println("member --- Login, API로 요청");
-    	
+
     	// API 데이터 요청 및 응답
 		HttpHeaders headers = new HttpHeaders();
 		//Charset utf8 = Charset.forName("UTF-8");
@@ -78,31 +81,47 @@ public class LoginController {
 		map.add("adminId", adminId);
 		map.add("adminPwd", adminPwd);
 
+		//요청 Entity map
 		HttpEntity<MultiValueMap<String,String>> entity = new HttpEntity<MultiValueMap<String, String>>(map, headers);
-		System.out.println("member --- #entity# "+entity);
 		
-		
+		//응답 Entity
 		ResponseEntity<RSPAUTH001> response = restTemplate.postForEntity(url, entity, RSPAUTH001.class);
-		String data = response.getBody().getData();
-		String result = response.getBody().getSuccess();
 		
-		//token 세팅
+		//token, 권한 확인
+		String token = "";
+		String role = "";
+		if(response.getBody().getAdminToken() != null) {
+			token = response.getBody().getAdminToken();
+			role = response.getBody().getAdminRole();
+		}
+		
+		//token, 권한 세팅
 		HttpSession session = request.getSession();
-		session.setAttribute("token", data);
-		System.out.println(session);
-		System.out.println(session.getAttribute("token"));
+		session.setAttribute("token", token);
+		session.setAttribute("role", role);
+		System.out.println("TOKEN : " + session.getAttribute("token"));
+		System.out.println("ROLE : " + session.getAttribute("role"));
 
-
-		// 응답 상태에 따른 처리
-		if(result.equals("true")) {
+		
+		// 로그인 실패
+		if(token == "") {
+			System.out.println("로그인 실패");
+			
+			redirectAttributes.addFlashAttribute( "msg", "아이디 또는 비밀번호를 확인해주세요." );
+			redirectAttributes.addFlashAttribute( "loginRslt", "fail" );
+			return new ModelAndView("redirect:/login/admin_login");
+			
+		// 로그인 성공
+		} else {
+			System.out.println("로그인 성공");
+			
 			redirectAttributes.addFlashAttribute( "msg", "환영합니다!" );
 			redirectAttributes.addFlashAttribute( "loginRslt", "success_login" );
 			return new ModelAndView("redirect:/index");
-		} else {
-			redirectAttributes.addFlashAttribute( "msg", "아이디 또는 비밀번호를 확인해주세요." );
-			redirectAttributes.addFlashAttribute( "loginRslt", "fail" );
-			return new ModelAndView("redirect:/index");
+			
 		}
+		
+		
     }
 
 
@@ -178,17 +197,15 @@ public class LoginController {
     public String logout(
     		HttpServletRequest request
     		) {
-    	System.out.println("ㅎㅇ");
+    	System.out.println("Admin Logout.....");
     	HttpSession session = request.getSession();
     	session.invalidate();
-    	//String token = (String) session.getAttribute("token");
-    	//System.out.println(token);
     	
-    	return "redirect:/index";
+    	return "redirect:/login/admin_login";
     }
 
     /*
-     * 비밀번호 찾기
+     * 비밀번호 찾기 미완
      */
     @GetMapping("/admin_forget_pwd")
     public String admin_forget_pwd(Model model) {

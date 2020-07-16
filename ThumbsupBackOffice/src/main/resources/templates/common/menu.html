@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="resources/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
@@ -43,7 +43,101 @@
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="index"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="index"><i class="menu-icon fa fa-laptop"></i>Server</a>
+                        <a href="index_backup"><i class="menu-icon fa fa-laptop"></i>Dashboard Backup</a>
                     </li>
+                    <li class="menu-title">Member</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                    <li>
+                        <a href="widgets"> <i class="menu-icon ti-email"></i>회원</a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        	<i class="menu-icon fa fa-th"></i>홈페이지
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-id-badge"></i><a href="member/notice">Notice</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ui-tabs">Event</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">About us</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">Brand News</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">Brand Degisner</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">Free Talk</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">Anonymous Talk</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">Admin</li><!-- /.menu-title -->
+                    <li>
+                        <a href="widgets"> <i class="menu-icon ti-email"></i>관리자</a>
+                    </li>
+                    <li>
+                        <a href="widgets"> <i class="menu-icon fa fa-th"></i>메세지</a>
+                    </li>
+                    <li>
+                        <a href="widgets"> <i class="menu-icon fa fa-th"></i>실시간 채팅</a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        	<i class="menu-icon fa fa-line-chart"></i>통계
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+							<li><i class="fa fa-id-badge"></i><a href="ui-badges">회원 통계</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges">추천수 통계</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges">브랜드 통계</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        	<i class="menu-icon fa fa-cogs"></i>고객지원
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">1:1문의</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">자주묻는 질문</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ui-tabs">이용안내</a></li>
+							<li><i class="fa fa-bars"></i><a href="ui-tabs">이용약관</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        	<i class="menu-icon fa fa-cogs"></i>설정
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                        	<li><i class="fa fa-id-card-o"></i><a href="ui-tabs">프로그램설정</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-tabs">권한설정</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-tabs">차단설정</a></li>
+                         	<li><i class="fa fa-bars"></i><a href="ui-tabs">공통코드 설정</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">웹 로그</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">App</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        	<i class="menu-icon fa fa-th"></i>Android
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges">푸시</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">알림</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">앱 로그</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        	<i class="menu-icon fa fa-th"></i>IOS
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges">푸시</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">알림</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards">앱 로그</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">Partner</li><!-- /.menu-title -->
+                    <li>
+                        <a href="widgets"> <i class="menu-icon ti-email"></i>제휴사 </a>
+                    </li>
+                    
+                    
+                    
+                    <!-- Templete -->
+                    
                     <li class="menu-title">UI elements</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>

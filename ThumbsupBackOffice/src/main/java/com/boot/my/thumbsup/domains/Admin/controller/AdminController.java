@@ -28,6 +28,14 @@ public class AdminController {
     @RequestMapping("/index")
     public String index(
     		Model model) {
+    	return "index";
+    }
+    
+    
+    //백업본
+    @RequestMapping("/index_backup")
+    public String index_backup(
+    		Model model) {
     	boardRepository.deleteAll();
     	boardService.save(new BoardEntity("Ramesh", "Fadatare", "ramesh@gmail.com"));
     	boardService.save(new BoardEntity("Tom", "Cruise", "tom@gmail.com"));
@@ -46,8 +54,10 @@ public class AdminController {
 
         model.addAttribute("board_list",boardRepository.findAll());
     	model.addAttribute("test","test");
-    	return "index";
+    	return "index_backup";
     }
+    
+    
     
     
 }

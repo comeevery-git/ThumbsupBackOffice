@@ -49,3 +49,7 @@
   font-weight: bold;
 }
 
+/* 링크 색상 */
+a, button {
+	color: #DB7E8C;
+}
