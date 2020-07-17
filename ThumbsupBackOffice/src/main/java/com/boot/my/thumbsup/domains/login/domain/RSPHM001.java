@@ -4,19 +4,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 /*
- * 직원가입
+ * 홈페이지 공지사항
  */
 
 @Getter
 @Setter
-public class RSPAUTH002 implements RqsInterData{
+public class RSPHM001 implements RqsInterData{
 	// 결과값
 	private String success;
 	
 	// 결과msg
 	private String msg;
-    
-    
+	
+    // token
+    private String adminToken;
     
     
 }

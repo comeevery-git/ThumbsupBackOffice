@@ -6,6 +6,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
+/*
+ * Spring Security hasRole 대신 수동으로 권한제어
+ */
+
 @Component
 public class AuthorizationChecker {
 
@@ -15,7 +19,7 @@ public class AuthorizationChecker {
 		
         if(session.getAttribute("role")!=null) {
         	String role = session.getAttribute("role").toString();
-        	System.out.println(session.getAttribute("role"));
+        	//System.out.println(session.getAttribute("role"));
         	
 	        if(role.equals("[ROLE_ADMIN]")) {
 	        	System.out.println("ADMIN 권한입니다.");

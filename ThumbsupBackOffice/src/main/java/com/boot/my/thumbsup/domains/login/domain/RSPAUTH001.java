@@ -13,6 +13,9 @@ public class RSPAUTH001 implements RqsInterData{
 	// 결과값
 	private String success;
 	
+	// 결과msg
+	private String msg;
+	
 	// 관리자 idx
 	private int admin_idx;
 	
