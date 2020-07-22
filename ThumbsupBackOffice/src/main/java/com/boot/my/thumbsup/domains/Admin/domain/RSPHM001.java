@@ -1,4 +1,6 @@
-package com.boot.my.thumbsup.domains.login.domain;
+package com.boot.my.thumbsup.domains.Admin.domain;
+
+import com.boot.my.thumbsup.domains.login.domain.RqsInterData;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,9 +17,7 @@ public class RSPHM001 implements RqsInterData{
 	
 	// 결과msg
 	private String msg;
-	
-    // token
-    private String adminToken;
-    
+
+
     
 }

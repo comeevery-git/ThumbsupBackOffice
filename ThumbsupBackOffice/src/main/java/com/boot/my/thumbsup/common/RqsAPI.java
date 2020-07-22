@@ -1,21 +1,19 @@
 package com.boot.my.thumbsup.common;
 
-import java.nio.charset.Charset;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import com.boot.my.thumbsup.domains.Admin.domain.RSPHM001;
 import com.boot.my.thumbsup.domains.login.domain.RSPAUTH001;
 import com.boot.my.thumbsup.domains.login.domain.RSPAUTH002;
-import com.boot.my.thumbsup.domains.login.domain.RSPHM001;
 
 /*
  * 
@@ -73,9 +71,9 @@ public class RqsAPI {
 		//홈페이지 공지사항
 		if (sendCategory == "notice") {
 			System.out.println("홈페이지 공지사항으로 요청합니다.");
-			ResponseEntity<RSPHM001> response = restTemplate.postForEntity(url, entity, RSPHM001.class);
+			ResponseEntity<RSPHM001> response = restTemplate.exchange(url, HttpMethod.GET, entity, RSPHM001.class);
+			System.out.println("왜 안되는 걸까 ? " );
 			result_map.put("response", response);
-			
 			System.out.println("홈페이지 공지사항 요청이 처리되었습니다.");
 		}
 		

@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.boot.my.thumbsup.common.RqsAPI;
-import com.boot.my.thumbsup.domains.login.domain.RSPHM001;
+import com.boot.my.thumbsup.domains.Admin.domain.RSPHM001;
 
 @Controller
 @RequestMapping("/member")
@@ -38,8 +39,7 @@ public class MemberWebController {
 	 */
 	@RequestMapping("/notice")
 	@ResponseBody
-	public String notice(
-			Model model,
+	public ModelAndView notice(
 			HttpServletRequest request,
 			RestTemplate restTemplate) {
 
@@ -61,10 +61,11 @@ public class MemberWebController {
 		//API응답값
 		ResponseEntity<RSPHM001> response = (ResponseEntity<RSPHM001>) result_map.get("response");
 		//System.out.println("#응답# "+response);
-		
+
 		//공지사항 확인
 		String result = response.getBody().getSuccess();
 		System.out.println("NOTICE : " + result);
+		
 		
 		/* 응답 상태에 따른 처리
 		String result = response.getBody().getSuccess();
@@ -86,7 +87,8 @@ public class MemberWebController {
 			
 		}
 			*/
-		return "member/notice";
+		//return "member/notice";
+		return new ModelAndView("redirect:/member/notice");
 
 
 	}
