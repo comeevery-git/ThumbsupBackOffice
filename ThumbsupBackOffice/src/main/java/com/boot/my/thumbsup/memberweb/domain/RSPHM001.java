@@ -1,6 +1,6 @@
-package com.boot.my.thumbsup.domains.Admin.domain;
+package com.boot.my.thumbsup.memberweb.domain;
 
-import com.boot.my.thumbsup.domains.login.domain.RqsInterData;
+import com.boot.my.thumbsup.common.RqsInterData;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,5 +19,6 @@ public class RSPHM001 implements RqsInterData{
 	private String msg;
 
 
+    
     
 }

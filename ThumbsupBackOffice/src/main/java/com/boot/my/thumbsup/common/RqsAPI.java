@@ -5,15 +5,14 @@ import java.util.Map;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import com.boot.my.thumbsup.domains.Admin.domain.RSPHM001;
 import com.boot.my.thumbsup.domains.login.domain.RSPAUTH001;
 import com.boot.my.thumbsup.domains.login.domain.RSPAUTH002;
+import com.boot.my.thumbsup.memberweb.domain.RSPHM001;
 
 /*
  * 
@@ -54,7 +53,6 @@ public class RqsAPI {
 		//응답 Entity
 		Map<String, Object> result_map = new HashMap<String, Object>();
 		
-		//로그인
 		if (sendCategory == "login") {
 			System.out.println("로그인으로 요청합니다.");
 			ResponseEntity<RSPAUTH001> response = restTemplate.postForEntity(url, entity, RSPAUTH001.class);
@@ -71,8 +69,12 @@ public class RqsAPI {
 		//홈페이지 공지사항
 		if (sendCategory == "notice") {
 			System.out.println("홈페이지 공지사항으로 요청합니다.");
-			ResponseEntity<RSPHM001> response = restTemplate.exchange(url, HttpMethod.GET, entity, RSPHM001.class);
-			System.out.println("왜 안되는 걸까 ? " );
+			ResponseEntity<RSPHM001> response = null;
+			
+			System.out.println("왜 안되는 걸까 ? 11111111" );
+			response = restTemplate.postForEntity(url, entity, RSPHM001.class);
+			System.out.println("왜 안되는 걸까 ? 2222222" );
+			
 			result_map.put("response", response);
 			System.out.println("홈페이지 공지사항 요청이 처리되었습니다.");
 		}

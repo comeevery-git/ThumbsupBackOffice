@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.boot.my.thumbsup.common.RqsAPI;
-import com.boot.my.thumbsup.domains.Admin.domain.RSPHM001;
+import com.boot.my.thumbsup.memberweb.domain.RSPHM001;
 
 @Controller
 @RequestMapping("/member")
@@ -49,7 +49,7 @@ public class MemberWebController {
 	    System.out.println("BackOffice --- notice, API로 요청");
 
 		//요청 url
-		String url = "http://localhost:8007/admin/webNotice";
+		String url = "http://localhost:8007/service/webNotice";
 		//요청 카테고리
 		String sendCategory = "notice";
 		//요청값
@@ -87,10 +87,10 @@ public class MemberWebController {
 			
 		}
 			*/
-		//return "member/notice";
-		return new ModelAndView("redirect:/member/notice");
-
-
+		//mv.setViewName("member/notice");
+		//return mv;
+		ModelAndView modelAndView = new ModelAndView("redirect:member/notice");
+		return modelAndView;
 	}
 	
 	

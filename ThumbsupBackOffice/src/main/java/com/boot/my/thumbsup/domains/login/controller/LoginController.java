@@ -173,10 +173,8 @@ public class LoginController {
     /*
      * 로그아웃
      */
-    @RequestMapping(value="/logout")
-    public String logout(
-    		HttpServletRequest request
-    		) {
+    @GetMapping(value="/logout")
+    public String logout(HttpServletRequest request) {
     	System.out.println("Admin Logout.....");
     	HttpSession session = request.getSession();
     	session.invalidate();

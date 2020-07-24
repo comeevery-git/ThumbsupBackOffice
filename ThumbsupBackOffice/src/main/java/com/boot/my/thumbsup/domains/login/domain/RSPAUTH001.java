@@ -1,5 +1,7 @@
 package com.boot.my.thumbsup.domains.login.domain;
 
+import com.boot.my.thumbsup.common.RqsInterData;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +26,7 @@ public class RSPAUTH001 implements RqsInterData{
 	
     // 관리자유형 
     private String adminType;
-
+	
     // 부서 
     private String adminDepart;
 

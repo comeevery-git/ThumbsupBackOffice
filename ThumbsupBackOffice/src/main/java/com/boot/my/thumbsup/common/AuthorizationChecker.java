@@ -22,7 +22,7 @@ public class AuthorizationChecker {
         	//System.out.println(session.getAttribute("role"));
         	
 	        if(role.equals("[ROLE_ADMIN]")) {
-	        	System.out.println("ADMIN 권한입니다.");
+	        	System.out.println("현재 권한은 " + role +" 입니다.");
 	        	return true;
 	        }
 
